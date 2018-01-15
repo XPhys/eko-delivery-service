@@ -1,0 +1,474 @@
+{
+	"info": {
+		"name": "Delivery Service",
+		"_postman_id": "270baba8-4962-2aa9-3323-a01c070d935b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Calculate Route Cost",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{domain}}/delivery/route/cost?r=A-B-E",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"delivery",
+						"route",
+						"cost"
+					],
+					"query": [
+						{
+							"key": "r",
+							"value": "A-B-E",
+							"equals": true,
+							"description": "<p>Route sequence from origin to destination.</p>\n<div>\n  <h4>Input Format</h4>\n  <p>{route-1}-{route-2}-{route-3}-....</p>\n</div>"
+						}
+					]
+				},
+				"description": "Calculate route cost by a given specified routes."
+			},
+			"response": [
+				{
+					"id": "a7a4ccc9-6d8e-4e68-ae87-0c9c38e1343c",
+					"name": "Usage example of delivery route A-B-E",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{domain}}/delivery/route/cost?r=A-B-E",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"delivery",
+								"route",
+								"cost"
+							],
+							"query": [
+								{
+									"key": "r",
+									"value": "A-B-E",
+									"equals": true,
+									"description": "Town sequence"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"name": "Access-Control-Allow-Origin",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "70",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Jan 2018 00:07:33 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"46-/e+6q+1/QFMyJWvUSdF5e6UaJ8s\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"responseTime": 33,
+					"body": "{\n    \"code\": 1,\n    \"message\": \"OK\",\n    \"data\": {\n        \"input\": \"A-B-E\",\n        \"result\": {\n            \"cost\": 4\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Calculate possible routes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/delivery/route/possible?r1=A&r2=A&maxStop=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"delivery",
+						"route",
+						"possible"
+					],
+					"query": [
+						{
+							"key": "r1",
+							"value": "A",
+							"equals": true,
+							"description": "<p>Origin town</p>"
+						},
+						{
+							"key": "r2",
+							"value": "A",
+							"equals": true,
+							"description": "<p>Destination town</p>"
+						},
+						{
+							"key": "maxStop",
+							"value": "4",
+							"equals": true,
+							"description": "<p>A maximum of stop points without using the same route twice in a delivery route.</p>\n<p>To disable the option, specify no value.</p>"
+						}
+					]
+				},
+				"description": "Calculate possible routes between 2 towns."
+			},
+			"response": [
+				{
+					"id": "64e173ee-bdf5-40a0-b160-2fdb1099c33f",
+					"name": "Usage example of possible routes from A to A with a number of maximum stop is 4",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/delivery/route/possible?r1=A&r2=A&maxStop=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"delivery",
+								"route",
+								"possible"
+							],
+							"query": [
+								{
+									"key": "r1",
+									"value": "A",
+									"equals": true,
+									"description": "<p>Origin town</p>"
+								},
+								{
+									"key": "r2",
+									"value": "A",
+									"equals": true,
+									"description": "<p>Destination town</p>"
+								},
+								{
+									"key": "maxStop",
+									"value": "4",
+									"equals": true,
+									"description": "<p>A maximum of stop points without using the same route twice in a delivery route.</p>\n<p>To disable the option, specify no value.</p>"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"name": "Access-Control-Allow-Origin",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "112",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Jan 2018 00:36:47 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"70-vsDcTYsh9C7JKeFKrlfXKAOGhhE\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"responseTime": 30,
+					"body": "{\"code\":1,\"message\":\"OK\",\"data\":{\"input\":\"A-A\",\"result\":{\"count\":3,\"routes\":[\"A-B-E-A\",\"A-C-D-E-A\",\"A-D-E-A\"]}}}"
+				},
+				{
+					"id": "8c5e5e2c-26aa-422e-84fa-1e80471062f9",
+					"name": "Usage example of possible routes from A to A with no maximum stop specified",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/delivery/route/possible?r1=A&r2=A&maxStop=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"delivery",
+								"route",
+								"possible"
+							],
+							"query": [
+								{
+									"key": "r1",
+									"value": "A",
+									"equals": true,
+									"description": "<p>Origin town</p>"
+								},
+								{
+									"key": "r2",
+									"value": "A",
+									"equals": true,
+									"description": "<p>Destination town</p>"
+								},
+								{
+									"key": "maxStop",
+									"value": "",
+									"equals": true,
+									"description": "<p>A maximum of stop points without using the same route twice in a delivery route.</p>\n<p>To disable the option, specify no value.</p>"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"name": "Access-Control-Allow-Origin",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "174",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Jan 2018 00:38:06 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ae-IcDSg4Ao39mV9SVupRxxTphH66o\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"responseTime": 32,
+					"body": "{\"code\":1,\"message\":\"OK\",\"data\":{\"input\":\"A-A\",\"result\":{\"count\":7,\"routes\":[\"A-B-E-A\",\"A-C-D-E-B-E-A\",\"A-C-D-E-A\",\"A-C-F-D-E-B-E-A\",\"A-C-F-D-E-A\",\"A-D-E-B-E-A\",\"A-D-E-A\"]}}}"
+				}
+			]
+		},
+		{
+			"name": "Calculate Cheapest Route",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/delivery/route/cheapest?r1=E&r2=E",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"delivery",
+						"route",
+						"cheapest"
+					],
+					"query": [
+						{
+							"key": "r1",
+							"value": "E",
+							"equals": true,
+							"description": "<p>Origin town</p>"
+						},
+						{
+							"key": "r2",
+							"value": "E",
+							"equals": true,
+							"description": "<p>Destination town</p>"
+						}
+					]
+				},
+				"description": "Calculate a cheapest route between 2 towns."
+			},
+			"response": [
+				{
+					"id": "33f000b4-a01b-4ce0-9c33-e0cb26111406",
+					"name": "Usage example of cheapest delivery route from E-E",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/delivery/route/cheapest?r1=E&r2=E",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"delivery",
+								"route",
+								"cheapest"
+							],
+							"query": [
+								{
+									"key": "r1",
+									"value": "E",
+									"equals": true,
+									"description": "<p>Origin town</p>"
+								},
+								{
+									"key": "r2",
+									"value": "E",
+									"equals": true,
+									"description": "<p>Destination town</p>"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"name": "Access-Control-Allow-Origin",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "84",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Jan 2018 01:11:06 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"54-mETorFMm9o2EKVnZxUAolx+LWhs\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"responseTime": 37,
+					"body": "{\"code\":1,\"message\":\"OK\",\"data\":{\"input\":\"E-E\",\"result\":{\"route\":\"E-B-E\",\"cost\":6}}}"
+				}
+			]
+		}
+	]
+}

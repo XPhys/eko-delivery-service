@@ -1,0 +1,1 @@
+{"version":3,"file":"standard.js","sourceRoot":"","sources":["../../../app/models/standard.ts"],"names":[],"mappings":";;AAAA;;;GAGG;AACH;IAmBI,YAAY,IAAa,EAAE,OAAgB,EAAE,IAAQ;QACjD,IAAI,CAAC,IAAI,GAAG,IAAI,IAAI,CAAC,CAAC;QACtB,IAAI,CAAC,OAAO,GAAG,OAAO,IAAI,EAAE,CAAC;QAC7B,IAAI,CAAC,IAAI,GAAG,IAAI,IAAI,SAAS,CAAC;IAClC,CAAC;CACJ;AAxBD,kCAwBC"}
