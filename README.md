@@ -77,5 +77,6 @@ To facilitate running the API server for examination purpose, `dist` directory i
 To run from `dist` after clone the repository without TypeScript compilation:
 
 ```
+npm install
 npm start
 ```
